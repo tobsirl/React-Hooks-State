@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import ShopContext from '../context/shop-context';
 import MainNavigation from '../components/MainNavigation';
 import { removeProductFromCart } from '../store/actions';
 import './Cart.css';
 
 class CartPage extends Component {
+  static contextType = ShopContext;
+
   render() {
     return (
       <React.Fragment>

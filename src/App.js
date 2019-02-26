@@ -19,6 +19,8 @@ class App extends Component {
 
   addProductToCart = product => {
     console.log('Adding product', product);
+    this.state.cart.push(product);
+    console.log(this.state.cart);
   };
 
   removeProductFromCart = productId => {
