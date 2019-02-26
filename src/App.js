@@ -26,7 +26,9 @@ class App extends Component {
       <ShopContext.Provider
         value={{
           products: this.state.products,
-          cart: this.state.cart
+          cart: this.state.cart,
+          addProductToCart: this.addProductToCart,
+          removeProductFromCart: this.removeProductFromCart
         }}
       >
         <BrowserRouter>
