@@ -17,9 +17,13 @@ class App extends Component {
     cart: []
   };
 
-  addProductToCart = product => {};
+  addProductToCart = product => {
+    console.log('Adding product', product);
+  };
 
-  removeProductFromCart = productId => {};
+  removeProductFromCart = productId => {
+    console.log('Removing product with' + productId);
+  };
 
   render() {
     return (
