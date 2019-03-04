@@ -16,6 +16,21 @@ const shopReducer = (state = initialState, action) => {
   let updatedItemIndex;
   switch (action.type) {
     case ADD_PRODUCT_TO_CART:
+      updatedCart = [...state.cart];
+      updatedItemIndex = updatedCart.findIndex(
+        item => item.id === action.payload.id
+      );
+
+      if (updatedItemIndex < 0) {
+        updatedCart.push({ ...action.payload, quantity: 1 });
+      } else {
+        const updatedItem = {
+          ...updatedCart[updatedItemIndex]
+        };
+        updatedItem.quantity++;
+        updatedCart[updatedItemIndex] = updatedItem;
+      }
+      return { ...state, cart: updatedCart };
 
     case REMOVE_PRODUCT_FROM_CART:
       updatedCart = [...state.cart];

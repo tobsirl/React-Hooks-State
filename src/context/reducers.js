@@ -42,7 +42,7 @@ export const shopReducer = (state, action) => {
     action.type // Object with a type, like redux
   ) {
     case ADD_PRODUCT:
-      return addProductToCart(action.product, state.cart);
+      return addProductToCart(action.product, state);
     case REMOVE_PRODUCT:
       return removeProductFromCart(action.productId, state);
     default:
